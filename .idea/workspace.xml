@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8229453-c4de-471b-b7fc-fe5e946ba983" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Go File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="D:\GO2" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1fqq0a0zfRiwr2diTzTlolJ9Vea" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build myChat/cmd/chatroom">
+    <configuration name="go build client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/demo/client.go" />
+      <package value="myChat/demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build myChat/cmd/chatroom" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/chatroom/main.go" />
+      <package value="myChat/cmd/chatroom" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build myChat/demo (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/demo/client2.go" />
+      <package value="myChat/demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build myChat/demo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/demo/server.go" />
+      <package value="myChat/demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build myChat/demo" />
+      <item itemvalue="Go Build.go build client.go" />
+      <item itemvalue="Go Build.go build myChat/demo (1)" />
+      <item itemvalue="Go Build.go build myChat/cmd/chatroom" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build myChat/cmd/chatroom" />
+        <item itemvalue="Go Build.go build client.go" />
+        <item itemvalue="Go Build.go build myChat/demo" />
+        <item itemvalue="Go Build.go build myChat/demo (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <proxy>direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="176" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597027756190">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="176" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.920@0.0.1440.920" timestamp="1597027756190" />
+    <state x="473" y="263" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597054415011">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="473" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.920@0.0.1440.920" timestamp="1597054415011" />
+    <state x="431" y="164" key="#go_build_client.go" timestamp="1597223851444">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="431" y="164" key="#go_build_client.go/0.0.1440.920@0.0.1440.920" timestamp="1597223851444" />
+    <state x="431" y="156" key="#go_build_myChat/demo" timestamp="1597027464274">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="431" y="156" key="#go_build_myChat/demo/0.0.1440.920@0.0.1440.920" timestamp="1597027464274" />
+    <state x="431" y="156" key="#go_build_myChat/demo_(1)" timestamp="1597028382288">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="431" y="156" key="#go_build_myChat/demo_(1)/0.0.1440.920@0.0.1440.920" timestamp="1597028382288" />
+    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1597224603906">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1597224603906" />
+    <state width="1397" height="293" key="GridCell.Tab.0.bottom" timestamp="1597233257713">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="293" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
+    <state width="1397" height="293" key="GridCell.Tab.0.center" timestamp="1597233257713">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="293" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
+    <state width="1397" height="293" key="GridCell.Tab.0.left" timestamp="1597233257713">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="293" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
+    <state width="1397" height="293" key="GridCell.Tab.0.right" timestamp="1597233257713">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state width="1397" height="293" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
+    <state x="222" y="103" key="SettingsEditor" timestamp="1597213675985">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1597213675985" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1597055818009">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1597055818009" />
+  </component>
+</project>
