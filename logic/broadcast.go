@@ -6,6 +6,8 @@
  **/
 package logic
 
+import "log"
+
 type broadcaster struct{
 	users map[string] *User
 
@@ -52,17 +54,27 @@ func (b *broadcaster) Start(){
 		case user := <-b.enteringChannel:
 			b.users[user.Nickname] = user
 			b.sendUserList()
+//			OfflineProcessor.Send(user)
 		case user := <-b.leavingChannel:
 			delete(b.users, user.Nickname)
 			user.CloseMessageChannel()
 			b.sendUserList()
 		case msg := <-b.messageChannel:
-			for _, user := range b.users{
-				if user.UID == msg.User.UID {
-					continue
+			if msg.To == "" {
+				for _, user := range b.users{
+					if user.UID == msg.User.UID {
+						continue
+					}
+					user.MessageChannel <- msg
 				}
-				user.MessageChannel <- msg
+			} else {
+				if user, ok := b.users[msg.To]; ok {//私信
+					user.MessageChannel <- msg
+				} else {
+					log.Println("user:",msg.To, "not exists!")
+				}
 			}
+//			OfflineProcessor.Save(msg)
 		case nickname := <-b.checkUserChannel:
 			if _, ok := b.users[nickname]; ok {
 				b.checkUserCanInChannel <- false

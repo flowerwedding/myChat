@@ -17,6 +17,9 @@ type Message struct{
 	Content     string           `json:"content,omitempty"`
 	MsgTime     time.Time        `json:"msg_time,omitempty"`
 
+	To          string           `json:"to,omitempty"`//私信
+	Ats         []string         `json:"mts,omitempty"`//@人
+
 	//Users       map[string]*User `json:"users,omitempty"`
 }
 

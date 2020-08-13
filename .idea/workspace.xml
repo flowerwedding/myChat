@@ -11,8 +11,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Go File" />
         <option value="HTML File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -125,33 +125,33 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="431" y="156" key="#go_build_myChat/demo_(1)/0.0.1440.920@0.0.1440.920" timestamp="1597028382288" />
-    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1597224603906">
+    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1597304225343">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1597224603906" />
-    <state width="1397" height="293" key="GridCell.Tab.0.bottom" timestamp="1597233257713">
+    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1597304225343" />
+    <state width="1397" height="250" key="GridCell.Tab.0.bottom" timestamp="1597309285902">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="293" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
-    <state width="1397" height="293" key="GridCell.Tab.0.center" timestamp="1597233257713">
+    <state width="1397" height="250" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1597309285902" />
+    <state width="1397" height="250" key="GridCell.Tab.0.center" timestamp="1597309285902">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="293" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
-    <state width="1397" height="293" key="GridCell.Tab.0.left" timestamp="1597233257713">
+    <state width="1397" height="250" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1597309285902" />
+    <state width="1397" height="250" key="GridCell.Tab.0.left" timestamp="1597309285901">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="293" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
-    <state width="1397" height="293" key="GridCell.Tab.0.right" timestamp="1597233257713">
+    <state width="1397" height="250" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1597309285901" />
+    <state width="1397" height="250" key="GridCell.Tab.0.right" timestamp="1597309285902">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="293" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1597233257713" />
+    <state width="1397" height="250" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1597309285902" />
     <state x="222" y="103" key="SettingsEditor" timestamp="1597213675985">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1597213675985" />
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1597055818009">
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1597308390761">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1597055818009" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1597308390761" />
   </component>
 </project>
