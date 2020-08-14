@@ -54,7 +54,7 @@ func (b *broadcaster) Start(){
 		case user := <-b.enteringChannel:
 			b.users[user.Nickname] = user
 			b.sendUserList()
-//			OfflineProcessor.Send(user)
+			OfflineProcessor.Send(user)
 		case user := <-b.leavingChannel:
 			delete(b.users, user.Nickname)
 			user.CloseMessageChannel()
@@ -74,7 +74,7 @@ func (b *broadcaster) Start(){
 					log.Println("user:",msg.To, "not exists!")
 				}
 			}
-//			OfflineProcessor.Save(msg)
+			OfflineProcessor.Save(msg)
 		case nickname := <-b.checkUserChannel:
 			if _, ok := b.users[nickname]; ok {
 				b.checkUserCanInChannel <- false

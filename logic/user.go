@@ -42,21 +42,21 @@ func NewUser(conn *websocket.Conn,token string, nickname string, addr string) *U
 		Addr:           addr,
 		EnterAt:        time.Now(),
 		MessageChannel: make(chan *Message, 32),
-//		Token:          token,
+		Token:          token,
 
 		conn: conn,
 	}
 
-/*	if user.Token != "" {
+	if user.Token != "" {
 		uid, err := parseTokenAndValidate(token, nickname)
 		if err == nil {
 			user.UID = uid
 		}
 	}
-*/
+
 	if user.UID == 0 {
 		user.UID = int(atomic.AddUint32(&globalUID, 1))
-//		user.Token = genToken(user.UID, user.Nickname)
+		user.Token = genToken(user.UID, user.Nickname)
 		user.isNew = true
 	}
 

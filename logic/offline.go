@@ -35,6 +35,7 @@ func (o *offlineProcessor) Save(msg *Message){
 	if msg.Type != MsgTypeNormal {
 		return
 	}
+
 	o.recentRing.Value = msg
 	o.recentRing = o.recentRing.Next()
 

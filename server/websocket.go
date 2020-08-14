@@ -25,6 +25,7 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 	//nickname := req.FormValue("nickname")
 	vars := req.URL.Query()
 	nickname := vars["nickname"][0]
+	token := vars["token"][0]
 	if l := len(nickname); l < 2 || l > 20 {
 		log.Println("nickname illegal: ",nickname)
 		_ = wsjson.Write(req.Context(), conn, logic.NewErrorMessage("非法昵称，昵称长度：4-20"))
@@ -38,7 +39,7 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 		return
 	}
 
-	user := logic.NewUser(conn,"", nickname, req.RemoteAddr)
+	user := logic.NewUser(conn,token, nickname, req.RemoteAddr)
 
 	//开启给用户发送消息的 goroutine
 	go user.SendMessage(req.Context())

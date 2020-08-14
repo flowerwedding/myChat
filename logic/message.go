@@ -55,7 +55,7 @@ func NewWelcomeMessage(u *User) *Message{
 	return &Message{
 		User:    System,
 		Type: MsgTypeSystem,
-		Content: "Welcome to chat ," + u.Nickname,
+		Content: "Welcome to chat ," + u.Nickname + ", please remember your token :"+ u.Token,
 		MsgTime: time.Now(),
 	}
 }
