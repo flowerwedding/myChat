@@ -37,14 +37,21 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myUtil" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myBlog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GoProjects\src\myChat\cmd\chatroom" />
+      <recent name="D:\GoProjects\src\myChat\cmd" />
+      <recent name="D:\GoProjects\src\myChat" />
+    </key>
   </component>
   <component name="RunManager" selected="Go Build.go build myChat/cmd/chatroom">
     <configuration name="go build client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -53,6 +60,15 @@
       <kind value="DIRECTORY" />
       <filePath value="$PROJECT_DIR$/demo/client.go" />
       <package value="myChat/demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build myChat/cmd/benchmark" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/benchmark/main.go" />
+      <package value="myChat/cmd/benchmark" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -88,10 +104,12 @@
       <item itemvalue="Go Build.go build client.go" />
       <item itemvalue="Go Build.go build myChat/demo (1)" />
       <item itemvalue="Go Build.go build myChat/cmd/chatroom" />
+      <item itemvalue="Go Build.go build myChat/cmd/benchmark" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build myChat/cmd/chatroom" />
+        <item itemvalue="Go Build.go build myChat/cmd/benchmark" />
         <item itemvalue="Go Build.go build client.go" />
         <item itemvalue="Go Build.go build myChat/demo" />
         <item itemvalue="Go Build.go build myChat/demo (1)" />
@@ -125,33 +143,33 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="431" y="156" key="#go_build_myChat/demo_(1)/0.0.1440.920@0.0.1440.920" timestamp="1597028382288" />
-    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1597367196369">
+    <state x="501" y="216" key="FileChooserDialogImpl" timestamp="1597485313386">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1597367196369" />
-    <state width="1397" height="252" key="GridCell.Tab.0.bottom" timestamp="1597375713539">
+    <state x="501" y="216" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1597485313386" />
+    <state width="1397" height="319" key="GridCell.Tab.0.bottom" timestamp="1597486577897">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="252" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1597375713539" />
-    <state width="1397" height="252" key="GridCell.Tab.0.center" timestamp="1597375713539">
+    <state width="1397" height="319" key="GridCell.Tab.0.bottom/0.0.1440.920@0.0.1440.920" timestamp="1597486577897" />
+    <state width="1397" height="319" key="GridCell.Tab.0.center" timestamp="1597486577896">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="252" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1597375713539" />
-    <state width="1397" height="252" key="GridCell.Tab.0.left" timestamp="1597375713538">
+    <state width="1397" height="319" key="GridCell.Tab.0.center/0.0.1440.920@0.0.1440.920" timestamp="1597486577896" />
+    <state width="1397" height="319" key="GridCell.Tab.0.left" timestamp="1597486577896">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="252" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1597375713538" />
-    <state width="1397" height="252" key="GridCell.Tab.0.right" timestamp="1597375713539">
+    <state width="1397" height="319" key="GridCell.Tab.0.left/0.0.1440.920@0.0.1440.920" timestamp="1597486577896" />
+    <state width="1397" height="319" key="GridCell.Tab.0.right" timestamp="1597486577897">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state width="1397" height="252" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1597375713539" />
-    <state x="222" y="103" key="SettingsEditor" timestamp="1597323781337">
+    <state width="1397" height="319" key="GridCell.Tab.0.right/0.0.1440.920@0.0.1440.920" timestamp="1597486577897" />
+    <state x="222" y="103" key="SettingsEditor" timestamp="1597483142111">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1597323781337" />
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1597372927395">
+    <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1597483142111" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1597484538897">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1597372927395" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1597484538897" />
   </component>
 </project>

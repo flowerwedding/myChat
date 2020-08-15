@@ -1,13 +1,12 @@
 /**
  * @Title  message
- * @description  #
+ * @description  信息处理
  * @Author  沈来
  * @Update  2020/8/9 14:52
  **/
 package logic
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -16,6 +15,8 @@ type Message struct{
 	Type        int              `json:"type,omitempty"`
 	Content     string           `json:"content,omitempty"`
 	MsgTime     time.Time        `json:"msg_time,omitempty"`
+
+	ClientSendTime time.Time `json:"client_send_time,omitempty"`
 
 	To          string           `json:"to,omitempty"`//私信
 	Ats         []string         `json:"mts,omitempty"`//@人
@@ -38,7 +39,6 @@ func NewMessage(u *User, s string) *Message {
 		MsgTime: time.Now(),
 	}
 
-	fmt.Println("message = ",message)
 	return message
 }
 

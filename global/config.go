@@ -1,6 +1,6 @@
 /**
  * @Title  CONFIG
- * @description  #
+ * @description  配置文件读取
  * @Author  沈来
  * @Update  2020/8/13 15:27
  **/
@@ -13,6 +13,8 @@ import (
 
 var (
 	SensitiveWords []string
+
+	MessageQueueLen = 1024
 )
 
 func initConfig(){
@@ -24,6 +26,7 @@ func initConfig(){
 	}
 
 	SensitiveWords = viper.GetStringSlice("sensitive")
+	MessageQueueLen = viper.GetInt("message-queue")
 
 	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event){

@@ -1,0 +1,84 @@
+definitions:
+  logic.Message:
+    properties:
+      client_send_time:
+        type: string
+      content:
+        type: string
+      msg_time:
+        type: string
+      mts:
+        description: '@人'
+        items:
+          type: string
+        type: array
+      to:
+        description: 私信
+        type: string
+      type:
+        type: integer
+      user:
+        $ref: '#/definitions/logic.User'
+        type: object
+    type: object
+  logic.User:
+    properties:
+      addr:
+        type: string
+      conn:
+        type: string
+      enter_at:
+        type: string
+      isNew:
+        type: boolean
+      nickname:
+        type: string
+      token:
+        type: string
+      uid:
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: 《Go语言编程之旅》项目练习
+  license: {}
+  termsOfService: https://github.com/flowerwedding/myChat
+  title: 聊天室
+  version: "1.0"
+paths:
+  /:
+    get:
+      summary: 模板
+  /user_list:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功
+          schema:
+            $ref: '#/definitions/logic.User'
+      summary: 获取用户列表
+  /ws:
+    get:
+      parameters:
+      - description: nickname
+        in: body
+        name: nickname
+        required: true
+        schema:
+          type: string
+      - description: token
+        in: body
+        name: token
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功
+          schema:
+            $ref: '#/definitions/logic.Message'
+      summary: 发送消息
+swagger: "2.0"

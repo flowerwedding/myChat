@@ -1,6 +1,6 @@
 /**
  * @Title  offline
- * @description  #
+ * @description  离线缓存
  * @Author  沈来
  * @Update  2020/8/13 16:33
  **/

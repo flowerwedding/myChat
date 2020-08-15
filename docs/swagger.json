@@ -1,0 +1,134 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "《Go语言编程之旅》项目练习",
+        "title": "聊天室",
+        "termsOfService": "https://github.com/flowerwedding/myChat",
+        "contact": {},
+        "license": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "模板",
+                "responses": {
+                    "200": {
+                      "description": ""
+                    }
+                }
+            }
+        },
+        "/user_list": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "获取用户列表",
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "schema": {
+                            "$ref": "#/definitions/logic.User"
+                        }
+                    }
+                }
+            }
+        },
+       "/ws": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "发送消息",
+                "parameters": [
+                    {
+                        "description": "nickname",
+                        "name": "nickname",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "token",
+                        "name": "token",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "schema": {
+                            "$ref": "#/definitions/logic.Message"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "logic.Message": {
+            "type": "object",
+            "properties": {
+                "client_send_time": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "msg_time": {
+                    "type": "string"
+                },
+                "mts": {
+                    "description": "@人",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "to": {
+                    "description": "私信",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "user": {
+                    "type": "object",
+                    "$ref": "#/definitions/logic.User"
+                }
+            }
+        },
+        "logic.User": {
+            "type": "object",
+            "properties": {
+                "addr": {
+                    "type": "string"
+                },
+                "conn": {
+                    "type": "string"
+                },
+                "enter_at": {
+                    "type": "string"
+                },
+                "isNew": {
+                    "type": "boolean"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "uid": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

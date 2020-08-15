@@ -1,6 +1,6 @@
 /**
  * @Title  user
- * @description  #
+ * @description  用户处理
  * @Author  沈来
  * @Update  2020/8/9 14:52
  **/
@@ -27,14 +27,13 @@ type User struct {
 	Addr        string            `json:"addr"`
 	MessageChannel  chan *Message `json:"-"`
 
-	Token       string        `json:"token"`
+	Token       string        `json:"token,omitempty"`
 	isNew       bool
 
 	conn *websocket.Conn
 }
 
 var System = &User{UID: -1,Nickname:"System"}
-//var System *User
 
 func NewUser(conn *websocket.Conn,token string, nickname string, addr string) *User {
 	user := &User{
@@ -65,9 +64,14 @@ func NewUser(conn *websocket.Conn,token string, nickname string, addr string) *U
 
 func (u *User) SendMessage(ctx context.Context){
 	for msg := range u.MessageChannel {
-		txt := msg.User.Nickname + "(" + msg.MsgTime.Format("15:04:05" ) + ")" + ":" + msg.Content
+		//txt := msg.User.Nickname + "(" + msg.MsgTime.Format("15:04:05" ) + ")" + ":" + msg.Content
+		txt := msg
 		_ = wsjson.Write(ctx, u.conn, txt)
 	}
+}
+
+func (u *User) CloseMessageChannel(){
+	close(u.MessageChannel)
 }
 
 func (u *User) ReceiveMessage(ctx context.Context) error{
@@ -103,10 +107,6 @@ func (u *User) ReceiveMessage(ctx context.Context) error{
 
 		Broadcaster.Broadcast(sendMsg)
 	}
-}
-
-func (u *User) CloseMessageChannel(){
-	close(u.MessageChannel)
 }
 
 func FilterSensitive(content string) string{

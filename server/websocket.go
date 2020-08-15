@@ -1,6 +1,6 @@
 /**
  * @Title  websocket
- * @description  #
+ * @description  服务端总流程
  * @Author  沈来
  * @Update  2020/8/9 14:53
  **/
@@ -14,6 +14,12 @@ import (
 	"nhooyr.io/websocket/wsjson"
 )
 
+// @Summary  发送消息
+// @Produce  json
+// @Param  nickname body string true "nickname"
+// @Param  token body string false "token"
+// @Success  200 {object} logic.Message "成功"
+// @Router  /ws [GET]
 func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 	conn, err := websocket.Accept(w, req,&websocket.AcceptOptions{InsecureSkipVerify:true})
 	if err != nil {
@@ -39,17 +45,22 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 		return
 	}
 
-	user := logic.NewUser(conn,token, nickname, req.RemoteAddr)
+	userHasToken := logic.NewUser(conn,token, nickname, req.RemoteAddr)
 
 	//开启给用户发送消息的 goroutine
-	go user.SendMessage(req.Context())
+	go userHasToken.SendMessage(req.Context())
 
 	//给新用户发送欢迎消息
-	user.MessageChannel <- logic.NewWelcomeMessage(user)
+	userHasToken.MessageChannel <- logic.NewWelcomeMessage(userHasToken)
 
 	//向所有的用户告知新用户的到来
 	msg := logic.NewNoticeMessage(nickname + "加入了聊天室")
 	logic.Broadcaster.Broadcast(msg)
+
+	// 避免 token 泄露
+	tmpUser := *userHasToken
+	user := &tmpUser
+	user.Token = ""
 
 	//将该用户加入广播器的用户列表
 	logic.Broadcaster.UserEntering(user)

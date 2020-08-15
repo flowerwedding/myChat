@@ -1,6 +1,6 @@
 /**
  * @Title  token
- * @description  #
+ * @description  统一识别符
  * @Author  沈来
  * @Update  2020/8/13 16:20
  **/
