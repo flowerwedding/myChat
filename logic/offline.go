@@ -57,7 +57,7 @@ func (o *offlineProcessor) Save(msg *Message){
 func (o *offlineProcessor) Send(user *User) {
 	o.recentRing.Do(func(value interface{}){
 		if value != nil {
-			user.MessageChannel <- value.(*Message)
+			Sending(nil, value.(*Message), "*."+user.Nickname+".*")
 		}
 	})
 
@@ -68,7 +68,7 @@ func (o *offlineProcessor) Send(user *User) {
 	if r, ok := o.userRing[user.Nickname]; ok {
 		r.Do(func(value interface{}) {
 			if value != nil {
-				user.MessageChannel <- value.(*Message)
+				Sending(nil, value.(*Message), "*."+user.Nickname+".*")
 			}
 		})
 

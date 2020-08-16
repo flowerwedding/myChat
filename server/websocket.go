@@ -38,7 +38,7 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 		_ = conn.Close(websocket.StatusUnsupportedData, "nickname illegal!")
 		return
 	}
-	if !logic.Broadcaster.CanEnterRoom(nickname) {
+	if logic.Broadcaster.CanEnterRoom(nickname) {
 		log.Println("昵称已经存在：",nickname)
 		_ = wsjson.Write(req.Context(), conn, logic.NewErrorMessage("该昵称已经存在！"))
 		_ = conn.Close(websocket.StatusUnsupportedData, "nickname exists!")
@@ -47,15 +47,17 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 
 	userHasToken := logic.NewUser(conn,token, nickname, req.RemoteAddr)
 
+	//向所有的用户告知新用户的到来
+	msg := logic.NewNoticeMessage(nickname + "加入了聊天室")
+	logic.Broadcaster.Broadcast(msg)
+
 	//开启给用户发送消息的 goroutine
 	go userHasToken.SendMessage(req.Context())
 
 	//给新用户发送欢迎消息
-	userHasToken.MessageChannel <- logic.NewWelcomeMessage(userHasToken)
+	logic.Sending(nil,logic.NewWelcomeMessage(userHasToken),"*."+userHasToken.Nickname+".*")
 
-	//向所有的用户告知新用户的到来
-	msg := logic.NewNoticeMessage(nickname + "加入了聊天室")
-	logic.Broadcaster.Broadcast(msg)
+	logic.Sending(nil,logic.NewWelcomeMessage(userHasToken),"*."+userHasToken.Nickname+".*")
 
 	// 避免 token 泄露
 	tmpUser := *userHasToken
@@ -65,6 +67,20 @@ func WebSocketHandleFunc(w http.ResponseWriter,req *http.Request) {
 	//将该用户加入广播器的用户列表
 	logic.Broadcaster.UserEntering(user)
 	log.Println("user:", nickname, "joins chat")
+/*
+	go func() {
+		d := 5 * time.Minute
+		timer := time.NewTimer(d)
+		for {
+			<-timer.C
+			if user.Active {
+				timer.Reset(d)
+				user.Active = false
+			}else {
+				conn.Close(websocket.StatusInternalError, "")
+			}
+		}
+	}()*/
 
 	//接收用户消息
 	err = user.ReceiveMessage(req.Context())

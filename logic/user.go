@@ -8,7 +8,10 @@ package logic
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
+	"github.com/streadway/amqp"
+	"log"
 	"myChat/global"
 	"nhooyr.io/websocket"
 	"nhooyr.io/websocket/wsjson"
@@ -22,10 +25,10 @@ var globalUID uint32 = 0
 
 type User struct {
 	UID         int               `json:"uid"`
+	Active      bool              `json:"active,omitempty"`
 	Nickname    string            `json:"nickname"`
 	EnterAt     time.Time         `json:"enter_at"`
 	Addr        string            `json:"addr"`
-	MessageChannel  chan *Message `json:"-"`
 
 	Token       string        `json:"token,omitempty"`
 	isNew       bool
@@ -38,9 +41,9 @@ var System = &User{UID: -1,Nickname:"System"}
 func NewUser(conn *websocket.Conn,token string, nickname string, addr string) *User {
 	user := &User{
 		Nickname:       nickname,
+		Active:         false,
 		Addr:           addr,
 		EnterAt:        time.Now(),
-		MessageChannel: make(chan *Message, 32),
 		Token:          token,
 
 		conn: conn,
@@ -63,15 +66,48 @@ func NewUser(conn *websocket.Conn,token string, nickname string, addr string) *U
 }
 
 func (u *User) SendMessage(ctx context.Context){
-	for msg := range u.MessageChannel {
-		//txt := msg.User.Nickname + "(" + msg.MsgTime.Format("15:04:05" ) + ")" + ":" + msg.Content
-		txt := msg
-		_ = wsjson.Write(ctx, u.conn, txt)
-	}
+	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	failOnError(err, "Failed to connect to RabbitMQ")
+	defer conn.Close()
+
+	ch, err := conn.Channel()
+	failOnError(err, "Failed to open a channel")
+	defer ch.Close()
+
+	err = ch.ExchangeDeclare("logs_topic", "topic", true, false, false, false, nil)
+	failOnError(err, "Failed to declare an exchange")
+
+	q, err := ch.QueueDeclare("", false, false, true, false, nil)
+	failOnError(err, "Failed to declare a queue")
+
+	//key
+	err = ch.QueueBind(q.Name, "*."+u.Nickname+".*", "logs_topic", false, nil)
+
+	msgs, err := ch.Consume(q.Name, "", true, false, false, false, nil )
+	failOnError(err, "Failed to register a consumer")
+
+	forever := make(chan bool)
+
+	go func(){
+		for d:= range msgs {
+			good := &Message{}
+			err := json.Unmarshal(d.Body, good)
+			if err != nil {
+				log.Printf("Error decoding JSON: %s",err)
+			}
+
+			txt := good.User.Nickname + "(" + good.MsgTime.Format("15:04:05" ) + ")" + ":" + good.Content
+
+			_ = wsjson.Write(ctx, u.conn, txt)
+		}
+	}()
+
+	log.Printf(" [*] Waiting for logs. To exit press CTRL+C")
+	<-forever
 }
 
 func (u *User) CloseMessageChannel(){
-	close(u.MessageChannel)
+
 }
 
 func (u *User) ReceiveMessage(ctx context.Context) error{
